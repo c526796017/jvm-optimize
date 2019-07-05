@@ -59,7 +59,7 @@ public class JsonView<T> {
 
     public ResponseResult fail(T Data) {
         ResponseResult responseResult = new ResponseResult();
-        responseResult.setCode(ESystemCode.HEALTHCARE_FAIL.toCode());
+        responseResult.setCode(ESystemCode.FAIL_TSET.toCode());
         responseResult.setMessage(Data.toString());
         return responseResult;
     }

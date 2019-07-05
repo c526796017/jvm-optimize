@@ -18,7 +18,7 @@ mybatis-plus:
   # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
   mapper-locations: classpath:/mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.kzj.goods.model;com.kzj.drug.model
+  typeAliasesPackage: com.mama.model
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
     id-type: 2
@@ -58,40 +58,41 @@ mybatis-plus:
       max-request-size: 200MB
       enabled: true
 
-  ribbon:
-    ReadTimeout: 65000
-    ConnectTimeout: 65000
-
 server:
-  port: 8713
+  port: 8701
 
-eureka:
-  instance:
-    hostname: ${spring.cloud.client.ip-address}
-    lease-expiration-duration-in-seconds: 10
-    lease-renewal-interval-in-seconds: 10
-  client:
-    service-url:
-       defaultZone: http://localhost:8700/eureka/
-    registry-fetch-interval-seconds: 10
 
-# 配置hystrix
-feign:
-  hystrix:
-    enabled: true
+#  ribbon:
+#    ReadTimeout: 65000
+#    ConnectTimeout: 65000
 
-hystrix:
-  threadpool:
-    default:
-      coreSize: 10  #线程池核心线程数
-  command:
-    #IService#hello(): 设置某一个接口 default: 设置全部接口
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 65000 #超时时间
-      circuitBreaker:
-        requestVolumeThreshold: 20  #当在配置时间窗口内达到此数量后，进行短路。默认20个
-        sleepWindowInMilliseconds: 5  #短路多久以后开始尝试是否恢复，默认5s
-        errorThresholdPercentage: 50%  #出错百分比阈值，当达到此阈值后，开始短路。默认50%
+#eureka:
+#  instance:
+#    hostname: ${spring.cloud.client.ip-address}
+#    lease-expiration-duration-in-seconds: 10
+#    lease-renewal-interval-in-seconds: 10
+#  client:
+#    service-url:
+#       defaultZone: http://localhost:8700/eureka/
+#    registry-fetch-interval-seconds: 10
+#
+## 配置hystrix
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#hystrix:
+#  threadpool:
+#    default:
+#      coreSize: 10  #线程池核心线程数
+#  command:
+#    #IService#hello(): 设置某一个接口 default: 设置全部接口
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 65000 #超时时间
+#      circuitBreaker:
+#        requestVolumeThreshold: 20  #当在配置时间窗口内达到此数量后，进行短路。默认20个
+#        sleepWindowInMilliseconds: 5  #短路多久以后开始尝试是否恢复，默认5s
+#        errorThresholdPercentage: 50%  #出错百分比阈值，当达到此阈值后，开始短路。默认50%
