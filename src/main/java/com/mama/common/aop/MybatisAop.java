@@ -20,21 +20,17 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Field;
 import java.util.List;
 
-//AOP拦截类，主要是为了createTime，updateTime，和主键id提供自动插入值得功能
+//AOP拦截类，主要是为了createTime，updateTime，和主键id提供自动插入值的功能
 @Aspect
 @Component
 @Order(5)//优先级
 public class MybatisAop {
 
-    @Pointcut("execution(public * com.kzj.drug.dao.*.*(..))")//切点
-    public void drug() {
+    @Pointcut("execution(public * com.mama.dao.*.*(..))")//切点
+    public void test() {
     }
 
-    @Pointcut("execution(public * com.kzj.goods.dao.*.*(..))")//切点
-    public void goods() {
-    }
-
-    @Before("drug()||goods()")//切入方法前
+    @Before("test()")//切入方法前
     public void doBefore(JoinPoint joinPoint) throws IllegalAccessException {
 //        log.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         String methodName = joinPoint.getSignature().getName().toLowerCase();
