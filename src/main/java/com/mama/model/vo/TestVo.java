@@ -10,10 +10,13 @@
  */
 package com.mama.model.vo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
 public class TestVo {
+    @ApiModelProperty("测试对象id")
     private Long id;
+    @ApiModelProperty("测试对象名称")
     private String name;
 }
