@@ -31,7 +31,7 @@
            CONSOLE将日志信息输出到控制上，为方便开发测试使用
     -->
     <!--<contextName>SpringBootDemo</contextName>-->
-    <property name="LOG_PATH" value="/home/mini_program_yxe/logs/jvm-optimize"/>
+    <property name="LOG_PATH" value="/data/jvm-optimize/logs"/>
     <!--<property name="LOG_PATH" value="C://Users//HZ//Desktop//log"/>-->
     <!--设置系统日志目录-->
     <!--<property name="APPDIR" value="SpringBootDemo" />-->
