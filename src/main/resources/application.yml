@@ -12,8 +12,6 @@ spring:
       testOnBorrow: true
       validationQuery: SELECT 1
 
-
-
 mybatis-plus:
   # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
   mapper-locations: classpath:/mapper/*.xml
@@ -51,13 +49,6 @@ mybatis-plus:
   jackson:
     dateFormat: yyyy-MM-dd'T'hh:mm:ss
 
-#文件上传大小限制
-  http:
-    multipart:
-      max-file-size: 200MB
-      max-request-size: 200MB
-      enabled: true
-
 server:
   port: 8701
 
@@ -66,16 +57,17 @@ server:
 #    ReadTimeout: 65000
 #    ConnectTimeout: 65000
 
-#eureka:
-#  instance:
-#    hostname: ${spring.cloud.client.ip-address}
-#    lease-expiration-duration-in-seconds: 10
-#    lease-renewal-interval-in-seconds: 10
-#  client:
-#    service-url:
-#       defaultZone: http://localhost:8700/eureka/
-#    registry-fetch-interval-seconds: 10
-#
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.ip-address}
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+       defaultZone: http://localhost:8700/eureka/
+    registry-fetch-interval-seconds: 10
+
+
 ## 配置hystrix
 #feign:
 #  hystrix:

@@ -1,7 +1,7 @@
 package com.mama.dao;
 
-import com.mama.model.Test;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.mama.model.Test;
 
 /**
  * <p>

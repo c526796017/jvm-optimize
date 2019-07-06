@@ -1,12 +1,15 @@
 package com.mama.model;
 
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author YHY
@@ -16,8 +19,9 @@ import java.io.Serializable;
 public class Test extends Model<Test> {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId("id")
     private Long id;
+    @TableField("name")
     private String name;
 
 
@@ -45,8 +49,8 @@ public class Test extends Model<Test> {
     @Override
     public String toString() {
         return "Test{" +
-        ", id=" + id +
-        ", name=" + name +
-        "}";
+                ", id=" + id +
+                ", name=" + name +
+                "}";
     }
 }
