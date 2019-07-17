@@ -268,14 +268,14 @@ public class BeanUtil {
      * @param keyName 为key的字段名称
      * @return
      */
-    public static Map<Object, Object> convertMapByField(List<?> source, String keyName) {
-        Map<Object, Object> map = new HashMap();
+    public static <A, T> Map<A, T> convertMapByField(List<T> source, String keyName) {
+        Map<A, T> map = new HashMap();
         if (source != null && source.size() > 0) {
-            for (Object t : source) {
+            for (T t : source) {
                 try {
                     Field field = t.getClass().getDeclaredField(keyName);
                     field.setAccessible(true);
-                    Object value = getPropertyValue(t, field);
+                    A value = getPropertyValue(t, field);
                     map.put(value, t);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -320,14 +320,14 @@ public class BeanUtil {
      * @param fieldName 为key的字段名称
      * @return
      */
-    public static <T> Map<Object, List<T>> convertMapAndListByField(List<T> source, String fieldName) {
-        Map<Object, List<T>> map = new HashMap();
+    public static <A, T> Map<A, List<T>> convertMapAndListByField(List<T> source, String fieldName) {
+        Map<A, List<T>> map = new HashMap();
         if (source != null && source.size() > 0) {
             for (T t : source) {
                 try {
                     Field field = t.getClass().getDeclaredField(fieldName);
                     field.setAccessible(true);
-                    Object value = getPropertyValue(t, field);
+                    A value = getPropertyValue(t, field);
                     List<T> tList = map.get(value);
                     if (CollectionUtils.isEmpty(tList)) {
                         tList = new LinkedList<>();
