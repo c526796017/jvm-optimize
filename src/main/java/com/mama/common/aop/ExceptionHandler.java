@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Auther: cjw
+ * @Auther: 杨浩宇
  * @Date: 2018/7/30 17:23
  * @Description:统一处理异常
  */

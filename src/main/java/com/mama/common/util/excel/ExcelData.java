@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @Auther: cjw
+ * @Auther: 杨浩宇
  * @Date: 2018/8/14 11:49
  * @Description: 导出Excel实体类
  */

@@ -1,5 +1,5 @@
 /**
- * Copyright (C), 2018-2018, 康之家有限公司
+ * Copyright (C), 2018-2018
  * FileName: DefaultLogAop
  * Author:   USER-PC
  * Date:     2018/8/27 10:47
@@ -35,11 +35,11 @@ public class DefaultLogAop {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    @Pointcut("execution(public * com.kzj.goods.controller..*.*(..))")
+    @Pointcut("execution(public * com.x.goods.controller..*.*(..))")
     public void goodsLog() {
     }
 
-    @Pointcut("execution(public * com.kzj.drug.controller..*.*(..))")
+    @Pointcut("execution(public * com.x.drug.controller..*.*(..))")
     public void drugLog() {
     }
 

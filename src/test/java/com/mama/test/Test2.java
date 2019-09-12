@@ -1,5 +1,5 @@
 /**
- * Copyright (C), 2018-2019, 康之家有限公司
+ * Copyright (C), 2018-2019
  * FileName: Test2
  * Author:   Administrator
  * Date:     2019/7/11 0011 11:44

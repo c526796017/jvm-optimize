@@ -1,5 +1,5 @@
 /**
- * Copyright (C), 2018-2019, 康之家有限公司
+ * Copyright (C), 2018-2019
  * FileName: Swagger
  * Author:   Administrator
  * Date:     2019/7/6 0006 16:51

@@ -16,19 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 功能描述:
- * 版本信息: Copyright (c)2018
- * 公司信息: 康之家
- * 开发人员: cjw
- * 版本日志: 1.0
- * 创建日期:  2018/12/25
- * 修改历史:
- * 时间 开发者 版本号 修改内容
- * ——————————————————————
- * 2018/12/25 cjw 1.0 1.0 Version
- * ——————————————————————
- */
 public class ExcelXlsReader implements HSSFListener {
 
     private int minColums = -1;

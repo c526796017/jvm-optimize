@@ -1,5 +1,5 @@
 /**
- * Copyright (C), 2018-2018, 康之家有限公司
+ * Copyright (C), 2018-2018
  * FileName: MybatisAop
  * Author:   admin
  * Date:     2018/7/16 14:32

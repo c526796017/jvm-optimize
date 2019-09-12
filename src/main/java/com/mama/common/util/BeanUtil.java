@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
 /**
- * @Auther: cjw
+ * @Auther: 杨浩宇
  * @Date: 2018/7/18 17:22
  * @Description: bean 工具类
  */

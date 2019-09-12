@@ -4,14 +4,14 @@ package com.mama.common.util;
 import com.mama.common.constant.Constant;
 
 /**
- * Copyright (C), 2018-2019, 康之家有限公司
+ * Copyright (C), 2018-2019
  * FileName: UUIDUtil
  * Author:   Administrator
  * Date:     2019/1/31/031 18:02
  * Description: ${DESCRIPTION}
  * History:
  * <author>          <time>          <version>          <desc>
- * 钟永勤           修改时间           版本号              描述
+ * 杨浩宇           修改时间           版本号              描述
  */
 public class UUIDUtil {
     private static  SnowflakeUtil snowflakeUtil;

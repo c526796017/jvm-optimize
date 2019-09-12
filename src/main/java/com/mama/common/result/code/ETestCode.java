@@ -1,12 +1,12 @@
 /**
- * Copyright (C), 2018, 广东康之家云健康医药股份有限公司
+ * Copyright (C), 2018
  * FileName: ESystemCode
- * Author:   何潮
+ * Author:   杨浩宇
  * Date:     2018/12/14 14:00
  * Description: 系统统一状态码
  * History:
  * <author>          <time>                <version>          <desc>
- * 何潮           2018/12/14 14:00           1.0             创建版本
+ * 杨浩宇           2018/12/14 14:00           1.0             创建版本
  */
 package com.mama.common.result.code;
 

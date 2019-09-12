@@ -1,5 +1,5 @@
 /**
- * Copyright (C), 2018-2019, 康之家有限公司
+ * Copyright (C), 2018-2019
  * FileName: MpGenerator
  * Author:   USER-PC
  * Date:     2019/1/7 14:22
