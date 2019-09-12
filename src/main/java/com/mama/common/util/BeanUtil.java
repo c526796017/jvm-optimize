@@ -370,6 +370,8 @@ public class BeanUtil {
                             target.put(name, field);
                         }
                         break;
+                    default:
+                        break;
                 }
             }
         }
@@ -557,7 +559,7 @@ public class BeanUtil {
         return orderIdStr;
     }
 
-    public static List<Long> StringToLongList(String strings) {
+    public static List<Long> stringToLongList(String strings) {
         String[] str = strings.split(",");
         List<Long> longs = Lists.newArrayList();
         for (String s : str) {
@@ -566,7 +568,7 @@ public class BeanUtil {
         return longs;
     }
 
-    public static List<Integer> StringToIntegerList(String strings) {
+    public static List<Integer> stringToIntegerList(String strings) {
         String[] str = strings.split(",");
         List<Integer> integers = Lists.newArrayList();
         for (String s : str) {
@@ -575,7 +577,7 @@ public class BeanUtil {
         return integers;
     }
 
-    public static List<String> StringToStringList(String strings) {
+    public static List<String> stringToStringList(String strings) {
         String[] str = strings.split(",");
         List<String> stringList = Lists.newArrayList();
         for (String s : str) {

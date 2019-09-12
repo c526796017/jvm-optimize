@@ -39,11 +39,11 @@ import java.util.Map;
  */
 public class HttpClientUtil {
 
-    private static final CloseableHttpClient httpClient;
+    private static final CloseableHttpClient HTTP_CLIENT;
 
     static {
         RequestConfig config = RequestConfig.custom().setConnectTimeout(60000).setSocketTimeout(15000).build();
-        httpClient = HttpClientBuilder.create().setDefaultRequestConfig(config).build();
+        HTTP_CLIENT = HttpClientBuilder.create().setDefaultRequestConfig(config).build();
     }
 
     /**
@@ -67,7 +67,7 @@ public class HttpClientUtil {
                 url += "?" + EntityUtils.toString(new UrlEncodedFormEntity(pairs, charset));
             }
             HttpGet httpGet = new HttpGet(url);
-            CloseableHttpResponse response = httpClient.execute(httpGet);
+            CloseableHttpResponse response = HTTP_CLIENT.execute(httpGet);
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode != 200) {
                 httpGet.abort();
@@ -107,7 +107,7 @@ public class HttpClientUtil {
             if (pairs != null && pairs.size() > 0) {
                 httpPost.setEntity(new UrlEncodedFormEntity(pairs, charset));
             }
-            CloseableHttpResponse response = httpClient.execute(httpPost);
+            CloseableHttpResponse response = HTTP_CLIENT.execute(httpPost);
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode != 200) {
                 httpPost.abort();

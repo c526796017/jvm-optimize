@@ -11,10 +11,7 @@
 package com.mama.test;
 
 import com.google.common.base.Joiner;
-import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-
-import java.util.ArrayList;
 
 public class Test4 {
     public static void main(String[] args) {

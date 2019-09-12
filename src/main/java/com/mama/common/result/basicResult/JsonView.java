@@ -37,7 +37,7 @@ public class JsonView<T> {
      * @return
      */
     public ResponseResult fail(Exception ex, T data) {
-        ResponseResult baseResDTO = getKZJException(ex);
+        ResponseResult baseResDTO = getKzjException(ex);
         baseResDTO.setData(data);
         return baseResDTO;
     }
@@ -57,10 +57,10 @@ public class JsonView<T> {
         return responseResult;
     }
 
-    public ResponseResult fail(T Data) {
+    public ResponseResult fail(T data) {
         ResponseResult responseResult = new ResponseResult();
         responseResult.setCode(ESystemCode.FAIL_TSET.toCode());
-        responseResult.setMessage(Data.toString());
+        responseResult.setMessage(data.toString());
         return responseResult;
     }
 
@@ -78,7 +78,7 @@ public class JsonView<T> {
      * @return
      */
     public static ResponseResult fail(Exception ex) {
-        ResponseResult baseResDTO = getKZJException(ex);
+        ResponseResult baseResDTO = getKzjException(ex);
         return baseResDTO;
     }
 
@@ -105,7 +105,7 @@ public class JsonView<T> {
      * @param ex
      * @return
      */
-    private static ResponseResult getKZJException(Exception ex) {
+    private static ResponseResult getKzjException(Exception ex) {
 
         SystemException zde = null;
         boolean isKzjExc=false;

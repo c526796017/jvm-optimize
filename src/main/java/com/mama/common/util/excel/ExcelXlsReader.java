@@ -77,7 +77,7 @@ public class ExcelXlsReader implements HSSFListener {
     //表索引
     private int sheetIndex = 0;
 
-    private BoundSheetRecord[] orderedBSRs;
+    private BoundSheetRecord[] orderedBsrs;
 
     @SuppressWarnings("unchecked")
     private ArrayList boundSheetRecords = new ArrayList();
@@ -148,6 +148,7 @@ public class ExcelXlsReader implements HSSFListener {
      * @param record
      */
     @SuppressWarnings("unchecked")
+    @Override
     public void processRecord(Record record) {
         int thisRow = -1;
         int thisColumn = -1;
@@ -165,10 +166,10 @@ public class ExcelXlsReader implements HSSFListener {
                         stubWorkbook = workbookBuildingListener.getStubHSSFWorkbook();
                     }
 
-                    if (orderedBSRs == null) {
-                        orderedBSRs = BoundSheetRecord.orderByBofPosition(boundSheetRecords);
+                    if (orderedBsrs == null) {
+                        orderedBsrs = BoundSheetRecord.orderByBofPosition(boundSheetRecords);
                     }
-                    sheetName = orderedBSRs[sheetIndex].getSheetname();
+                    sheetName = orderedBsrs[sheetIndex].getSheetname();
                     sheetIndex++;
                 }
                 break;
@@ -222,7 +223,7 @@ public class ExcelXlsReader implements HSSFListener {
                 curRow = thisRow = lrec.getRow();
                 thisColumn = lrec.getColumn();
                 value = lrec.getValue().trim();
-                value = value.equals("") ? "" : value;
+                value = "".equals(value) ? "" : value;
                 cellList.add(thisColumn, value);
                 checkRowIsNull(value);  //如果里面某个单元格含有值，则标识该行不为空行
                 break;
@@ -234,7 +235,7 @@ public class ExcelXlsReader implements HSSFListener {
                     cellList.add(thisColumn, "");
                 } else {
                     value = sstRecord.getString(lsrec.getSSTIndex()).toString().trim();
-                    value = value.equals("") ? "" : value;
+                    value = "".equals(value) ? "" : value;
                     cellList.add(thisColumn, value);
                     checkRowIsNull(value);  //如果里面某个单元格含有值，则标识该行不为空行
                 }
@@ -256,7 +257,7 @@ public class ExcelXlsReader implements HSSFListener {
                 int formatIndex=formatListener.getFormatIndex(numrec);
                 value=formatter.formatRawCellContents(valueDouble, formatIndex, formatString).trim();
 
-                value = value.equals("") ? "" : value;
+                value = "".equals(value) ? "" : value;
                 //向容器加入列值
                 cellList.add(thisColumn, value);
                 checkRowIsNull(value);  //如果里面某个单元格含有值，则标识该行不为空行
@@ -279,10 +280,12 @@ public class ExcelXlsReader implements HSSFListener {
         }
 
         //更新行和列的值
-        if (thisRow > -1)
+        if (thisRow > -1) {
             lastRowNumber = thisRow;
-        if (thisColumn > -1)
+        }
+        if (thisColumn > -1) {
             lastColumnNumber = thisColumn;
+        }
 
         //行结束时的操作
         if (record instanceof LastCellOfRowDummyRecord) {

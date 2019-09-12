@@ -24,7 +24,6 @@ public class UUIDUtil {
      * @return
      */
     public static Long getUuid(){
-        //return snowflakeUtil.nextId();
         return Long.valueOf(String.valueOf(snowflakeUtil.nextId()).substring(3));
     }
 

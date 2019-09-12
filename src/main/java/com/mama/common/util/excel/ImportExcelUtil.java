@@ -47,7 +47,7 @@ public class ImportExcelUtil {
             throw new Exception("文件格式错误，fileName的扩展名只能是xls或xlsx。");
         }
 
-        Map<String, List<List<String>>> result = new HashMap<>();
+        Map<String, List<List<String>>> result;
         if (fileName.endsWith(EXCEL03_EXTENSION)) { //处理excel2003文件
             ExcelXlsReader excelXls = new ExcelXlsReader();
             result = excelXls.process(excelFile);

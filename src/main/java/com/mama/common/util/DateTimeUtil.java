@@ -250,7 +250,7 @@ public class DateTimeUtil {
     public static Date getBefourMonth(Date date, int number) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        calendar.add(calendar.MONTH, -number);
+        calendar.add(Calendar.MONTH, -number);
         return calendar.getTime();
     }
 
@@ -319,11 +319,11 @@ public class DateTimeUtil {
         Date currentDate = new Date();
         Calendar midnight = Calendar.getInstance();
         midnight.setTime(currentDate);
-        midnight.add(midnight.DAY_OF_MONTH, 1);
-        midnight.set(midnight.HOUR_OF_DAY, 0);
-        midnight.set(midnight.MINUTE, 0);
-        midnight.set(midnight.SECOND, 0);
-        midnight.set(midnight.MILLISECOND, 0);
+        midnight.add(Calendar.DAY_OF_MONTH, 1);
+        midnight.set(Calendar.HOUR_OF_DAY, 0);
+        midnight.set(Calendar.MINUTE, 0);
+        midnight.set(Calendar.SECOND, 0);
+        midnight.set(Calendar.MILLISECOND, 0);
         return (midnight.getTime().getTime() - currentDate.getTime()) / 1000;
     }
 
@@ -481,15 +481,15 @@ public class DateTimeUtil {
     /**
      * 相差分钟数
      *
-     * @param beginL
-     * @param endL
+     * @param begin
+     * @param end
      * @return
      * @throws Exception
      */
-    public static Long timeDiffMinByTime(Long beginL, Long endL) {
+    public static Long timeDiffMinByTime(Long begin, Long end) {
         //Long day = (endL - beginL) / 86400000;
         //Long hour = ((endL - beginL) % 86400000) / 3600000;
-        Long min = ((endL - beginL) % 86400000 % 3600000) / 60000;
+        Long min = ((end - begin) % 86400000 % 3600000) / 60000;
         //return ("实际请假" + day + "小时" + hour + "分钟" + min);
         return min;
     }
@@ -518,7 +518,7 @@ public class DateTimeUtil {
      * @return
      * @throws Exception
      */
-    public static String timeToDateYMD(Long time) {
+    public static String timeToDateYmd(Long time) {
         String str = "";
         try {
             SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
@@ -536,7 +536,7 @@ public class DateTimeUtil {
      * @return 1当前时间之前 2当前时间之间 3当前时间之后
      */
     public static Short timeInterval(Long startTime, Long endTime) {
-        Long nowTime = new Date().getTime();
+        Long nowTime = System.currentTimeMillis();
         if (nowTime < startTime) {
             return Constant.ONE_SHORT;
         } else if (startTime <= nowTime && nowTime < endTime) {
@@ -567,7 +567,7 @@ public class DateTimeUtil {
      * @param date2 日期
      * @return int date1大于date2返回1，返回-1则date1小于date2，返回0则相同
      */
-    public static int compareDateYMD(long date1, long date2) {
+    public static int compareDateYmd(long date1, long date2) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date dt1 = df.parse(df.format(date1));

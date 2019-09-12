@@ -33,8 +33,8 @@ public class Swagger {
     @Bean
     public Docket createRestApi() {
         List<Parameter> pars = new ArrayList<>();
-        Parameter tokenP = (new ParameterBuilder()).name("token").description("user token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
-        pars.add(tokenP);    //根据每个方法名也知道当前方法在设置什么参数
+        Parameter token = (new ParameterBuilder()).name("token").description("user token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        pars.add(token);    //根据每个方法名也知道当前方法在设置什么参数
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()

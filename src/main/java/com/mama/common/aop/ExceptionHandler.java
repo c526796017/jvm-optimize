@@ -30,7 +30,7 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseResult handleHttpMessageNotReadableException(HttpMessageNotReadableException e, HttpServletRequest request) {
         log.error(request.getRequestURI() + ":参数解析失败",e);
-        return new JsonView().fail(e);
+        return JsonView.fail(e);
     }
 
     /**
@@ -40,7 +40,7 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseResult handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e, HttpServletRequest request) {
         log.error(request.getRequestURI() + ":不支持当前请求方法",e);
-        return new JsonView().fail(e);
+        return JsonView.fail(e);
     }
 
     /**
@@ -50,7 +50,7 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(HttpMediaTypeNotSupportedException.class)
     public ResponseResult handleHttpMediaTypeNotSupportedException(Exception e, HttpServletRequest request) {
         log.error(request.getRequestURI() + ":不支持当前媒体类型",e);
-        return new JsonView().fail(e);
+        return JsonView.fail(e);
     }
 
     /**
@@ -60,7 +60,7 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
     public ResponseResult handleException(Exception e, HttpServletRequest request) {
         log.error(request.getRequestURI() + "运行时异常");
-        return new JsonView().fail(e);
+        return JsonView.fail(e);
 
     }
 
@@ -72,7 +72,7 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(SystemException.class)
     public ResponseResult handleException(SystemException e, HttpServletRequest request) {
         log.error(request.getRequestURI() + "自定义运行时异常");
-        return new JsonView().fail(e);
+        return JsonView.fail(e);
 
     }
 }

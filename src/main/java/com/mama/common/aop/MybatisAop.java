@@ -32,7 +32,6 @@ public class MybatisAop {
 
     @Before("test()")//切入方法前
     public void doBefore(JoinPoint joinPoint) throws IllegalAccessException {
-//        log.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         String methodName = joinPoint.getSignature().getName().toLowerCase();
         if (methodName.contains("insert")) {
             for (Object obj : joinPoint.getArgs()) {
@@ -53,7 +52,7 @@ public class MybatisAop {
     }
 
     private void fieldSetValue(Object o, String method) throws IllegalAccessException {
-        if (method.equals("insert")) {
+        if ("insert".equals(method)) {
             for (Field field : o.getClass().getDeclaredFields()) {
                 String fieldName = field.getName().toLowerCase();
                 if (fieldName.contains("createtime") || fieldName.contains("updatetime")) {
@@ -63,7 +62,7 @@ public class MybatisAop {
                     }
                 }
             }
-        } else if (method.equals("update")) {
+        } else if ("update".equals(method)) {
             for (Field field : o.getClass().getDeclaredFields()) {
                 String fieldName = field.getName().toLowerCase();
                 if (fieldName.contains("updatetime")) {
